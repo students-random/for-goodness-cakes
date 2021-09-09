@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 
-<<<<<<< HEAD
-export default function Home(props) {
-	return (
-		<div className="HomePage">
-=======
+
 export default function Faqs(props) {
 	return (
 		<div className="Faqs">
->>>>>>> 39e0c38807335d19e47389326d747cd3ac687f34
 			<h1>Frequently Asked Questions</h1>
 			<ul>
 				<li>
