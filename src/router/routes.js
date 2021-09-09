@@ -3,6 +3,7 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
+import Faqs from '../pages/Faqs';
 
 const routes = [
 	{
@@ -24,6 +25,11 @@ const routes = [
 		Component: App,
 		key: 'App',
 		path: '/'
+	},
+	{
+		Component: Faqs,
+		key: 'Faqs',
+		path: '/Faqs'
 	}
 ];
 
