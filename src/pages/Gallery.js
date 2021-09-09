@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-
 export default function Gallery(props) {
-	return <div className="Gallery"></div>;
+	return (
+		<div className="Gallery">
+			<h1>Gallery</h1>
+		</div>
+	);
 }
