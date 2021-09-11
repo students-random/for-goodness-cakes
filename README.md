@@ -3,7 +3,7 @@
 This website application was designed with the idea of taking a bakery, For Goodness Cakes's, Instagram and turning it into a working site allowing baker to showcase goods, update an announcement bulletin and receive orders. Site allows users to schedule consultations, request an invoice and confirm orders placed.
 
 
-## Project Team  
+## Project Teammates  
 
 **Cathy Moran**       - Project Leader            [GitHub](https://github.com/morancathy)     [Portfolio](insert https://)
 **Yulia Penyevskaya** - Backend Engineer          [GitHub](https://github.com/Yuliap21)       [Portfolio](insert https://)
