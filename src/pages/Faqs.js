@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 export default function Faqs(props) {
 	return (
 		<div className="Faqs">
