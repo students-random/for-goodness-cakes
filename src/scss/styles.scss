@@ -2,23 +2,5 @@
 @import "utilities";
 @import "buttons";
 @import "navbar";
-
-.HomePage {
-  background-color: $off-white;
-}
-
-.AboutPage {
-  background-color: $off-white;
-}
-
-.ContactPage{
-  background-color: $off-white;
-}
-
-.AppPage {
-  background-color: $off-white;
-}
-
-.Faqs {
-  background-color: $off-white;
-}
+@import "footer";
+@import "pages";
