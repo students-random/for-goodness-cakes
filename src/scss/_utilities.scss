@@ -1,12 +1,18 @@
 @import "reset";
 @import "grid";
 
+
+
 h1 {
   font-family: 'Allison', cursive;
+  text-align: center;
+  color: $brown;
 }
 
 span {
   font-family: 'Playfair Display SC', serif;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 p {
