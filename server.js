@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const announcementController = require ('./controllers/announcementControllers');
 // const calendarController = require('./controllers/cal');
-// const userController = require('./controllers/userAuth');
+const { hash, register, login } = require('./controllers/auth');
 
 const MONGODB_URI = process.env.MONGODB_URI
 const db = mongoose.connection;
@@ -26,6 +26,9 @@ if (process.env.NODE_ENV !== 'development'){
 
 /* Controller Goes Here Remove the tes*/
 app.use('/api/announcement', announcementController);
+app.post('/api/register', register);
+app.post('/api/login', login);
+app.use('/api/register', require('./controllers/userControllers'));
 // app.use('/api/calendarControllers', calendarController);
 // app.use('/api/userControllers', userAuthController);
 /* Controller Ends here */
