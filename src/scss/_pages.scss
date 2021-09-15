@@ -25,3 +25,50 @@
     margin-bottom: 30px;
   }
 }
+
+.Gallery {
+
+  h1 {
+    font-size: calc(50px + 1vw);
+    background-color: $off-white;
+    margin-bottom: -10px;
+    padding-top: 30px;
+  }
+
+  .gallery-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 3rem;
+    background-color: $off-white;
+    margin: 8px 0;
+  }
+
+  img.cake {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: calc(50px + 1vw);
+      background-color: $off-white;
+      margin-bottom: -10px;
+      padding: 30px 0 15px 0;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+      padding: 1rem;
+      margin: 8px auto;
+    }
+  }
+}
