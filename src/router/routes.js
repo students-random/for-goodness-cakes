@@ -8,14 +8,14 @@ import Gallery from '../pages/Gallery';
 
 const routes = [
 	{
-		Component: Contact,
-		key: 'Contact',
-		path: '/contact'
-	},
-	{
 		Component: Home,
 		key: 'Home',
-		path: '/home'
+		path: '/'
+	},
+	{
+		Component: Gallery,
+		key: 'Gallery',
+		path: '/Gallery'
 	},
 	{
 		Component: About,
@@ -23,19 +23,14 @@ const routes = [
 		path: '/about'
 	},
 	{
-		Component: App,
-		key: 'App',
-		path: '/'
+		Component: Contact,
+		key: 'Contact',
+		path: '/contact'
 	},
 	{
 		Component: Faqs,
 		key: 'Faqs',
 		path: '/Faqs'
-	},
-	{
-		Component: Gallery,
-		key: 'Gallery',
-		path: '/Gallery'
 	}
 ];
 
