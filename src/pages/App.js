@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { InlineWidget } from 'react-calendly';
 
-export default function App(props) {
-	return <div className="AppPage">This is the {props.page} page</div>;
-}
+const App = () => {
+	return (
+		<div className="App">
+			<InlineWidget url="https://calendly.com/seirhypatia" />
+		</div>
+	);
+};
+
+export default App;

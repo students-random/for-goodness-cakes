@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { InlineWidget } from 'react-calendly';
+import App from './App';
 
 export default function Home(props) {
 	return (
@@ -11,7 +13,10 @@ export default function Home(props) {
 			</div>
 			<div>
 				<h2>Bulletin Board</h2>
-				<div>Insert Calendar component</div>
+				<div>
+					<App />
+				</div>
+
 				<div>Insert Announcements component</div>
 			</div>
 			<div>
