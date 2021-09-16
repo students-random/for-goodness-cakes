@@ -1,0 +1,51 @@
+.ContactPage {
+  background-color: $off-white;
+
+ h1 {
+   padding-top: 30px;
+   height: 94px;
+   width: 426px;
+   font-size: 72px;
+   font-style: italic;
+   font-weight: 400;
+   line-height: 91px;
+   letter-spacing: 0em;
+   margin: 0 auto;
+ }
+ .name-email-div {
+     width: 1114px;
+     margin: 0 auto;
+     margin-bottom: 53px;
+     margin-top: 108px;
+ }
+ .email-label {
+    width: 537px;
+ }
+ .name-label{
+    width: 537px;
+ }
+
+ #email, #name {
+   width: 537px;
+   height: 59px;
+   border: 2px solid #000000;
+ }
+
+ #textarea {
+   height: 350px;
+   border: 2px solid #000000;
+ }
+
+ .textarea-label {
+   width: 1114px;
+   margin: 0 auto;
+   padding-bottom: 31px;
+ }
+
+ label {
+   margin-bottom: 1px;
+   font-family: Playfair Display;
+   font-size: 36px;
+   line-height: 48px;
+ }
+}
