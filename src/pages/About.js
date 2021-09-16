@@ -18,7 +18,7 @@ export default function About(props) {
 					<h1>Meet our Baker</h1>
 					<p className="p-fgcbsl">For Goodness Cakes by Saira, LLC </p>
 					<p className="p-bhtab">Baking hobby to a Business 👩🏻‍💕</p>
-					<p>
+					<span className="meet-our-baker-p">
 						I would like to introduce my home based business. When I first
 						dabbled in baking, I never anticipated that this hobby will turn
 						into a business. Working full-time In a busy office can be mentally
@@ -30,7 +30,7 @@ export default function About(props) {
 						flavors we know. So I started experimenting with ube donuts and
 						chocobutternut flavors. From then on, I started to take orders first
 						from friends, then friends of friends, and then from a wider market.
-					</p>
+					</span>
 				</div>
 			</div>
 		</div>
