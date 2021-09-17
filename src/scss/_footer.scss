@@ -1,48 +1,46 @@
-.Footer {
-  padding-left: 92px;
-  padding-top: 44px;
-  font-family: Playfair Display;
-  font-weight: 400;
-  position: absolute;
-  width: 100%;
-  height: 280px;
-  background: #D0BAC4;
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+footer.footer {
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-flow: row wrap;
+  box-shadow: 0px -3px 8px $shadow;
+  background-color: $pink;
+  padding: 2.5em 3.5em;
+  justify-content: center;
+  align-items: center;
+  gap: 20em;
 
-  h5{
-    height: 56px;
-    width: 247px;
-    font-size: 36px;
-    line-height: 48px;
-  }
 
-  p{
-    .phone{
-      padding-top: 56px;
+  section {
+    h4 {
+    font-weight: 900;
     }
+    p.phone {
+    margin-bottom: -1.5px;
+    }
+    p.email {
 
-    font-size: 24px;
-    line-height: 32px;
-    margin-bottom: 0px;
+    }
+    a {
+      .instagram-img {
+        margin-right: 1.25em;
+        height: 35px;
+        width: auto;
+      }
+      .facebook-img {
+        height: 33px;
+        width: auto;
 
+      }
+    }
   }
-
-  .instagram-img{
-    padding-top: 11px;
+  img.footer-img {
+    width: auto;
+    height: 150px;
   }
-
-  .facebook-img{
-    padding-top: 11px;
-    padding-left: 25px;
+  // ===== Begin Media Query =====
+  @media (max-width: 1076px) {
+    gap: 2.5em;
+    transition: 0.3s;
   }
-
-  .footer-img{
-    height: 145px;
-    width: 347px;
-    position: absolute;
-	left: 70.76%;
-	right: 5.14%;
-	top: 23.93%;
-	bottom: 24.29%;
-  }
+  // ===== End Media Query =====
 }
