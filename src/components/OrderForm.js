@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import DayPicker from 'react-day-picker';
-import OtherCalenderDontUse from '../components/OtherCalenderDontUse';
+
 // import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 
@@ -63,7 +63,6 @@ const OrderForm = props => {
 
 	return (
 		<div className="OrderForm">
-			{/*<OtherCalenderDontUse />*/}
 			<h1>Make an Order</h1>
 
 			<div className="form">
@@ -239,6 +238,9 @@ const OrderForm = props => {
 					<input className="" type="submit" value="Submit your Order" />
 				</form>
 			</div>
+			<Link to={'/login'}>
+				<p className="show-go-to btn btn-primary">Log In</p>
+			</Link>
 		</div>
 	);
 };
