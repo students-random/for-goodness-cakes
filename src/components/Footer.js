@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = props => {
 	return (
@@ -21,6 +22,9 @@ const Footer = props => {
 				</a>
 			</section>
 			<img className="footer-img" src="/img/for-goodness-cakes-logo-dark.png" />
+			<Link to={'/admin'}>
+				<a style={{ color: '#787878' }}>Admin</a>
+			</Link>
 		</footer>
 	);
 };
