@@ -1,22 +1,17 @@
 .ContactPage {
   background-color: $off-white;
+  height:80vh;  //I have this here because I want the Thank You page to be full length.
+                //unless you know of another way?
 
  h1 {
+   font-size: calc(50px + 1vw);
+   margin-bottom: 50px;
    padding-top: 30px;
-   height: 94px;
-   width: 426px;
-   font-size: 72px;
-   font-style: italic;
-   font-weight: 400;
-   line-height: 91px;
-   letter-spacing: 0em;
-   margin: 0 auto;
- }
+}
  .name-email-div {
      width: 1114px;
      margin: 0 auto;
      margin-bottom: 53px;
-     margin-top: 108px;
  }
  .email-label {
     width: 537px;
