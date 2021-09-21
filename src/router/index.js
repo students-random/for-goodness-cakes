@@ -1,8 +1,8 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import LogIn from '../pages/LogIn';
-import OrderForm from '../components/OrderForm';
+import Admin from '../pages/Admin';
+import OrderForm from '../pages/OrderForm';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
 const AppRouter = () => {
@@ -23,8 +23,8 @@ const AppRouter = () => {
 					render={routerProps => <OrderForm {...routerProps} />}
 				></Route>
 				<Route
-					path={'/login'}
-					render={routerProps => <LogIn {...routerProps} />}
+					path={'/admin'}
+					render={routerProps => <Admin {...routerProps} />}
 				></Route>
 			</Switch>
 			<Footer />
