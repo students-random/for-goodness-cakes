@@ -50,10 +50,6 @@ const OrderForm = props => {
 			setSelectedDate(selectedDate);
 
 			setOrders([...orders, data]);
-
-			console.log('date: ', selectedDate);
-			console.log('order: ', data);
-			setDate();
 			setThanks(!thanks);
 		} catch (error) {
 			console.error(error);
@@ -63,15 +59,6 @@ const OrderForm = props => {
 	const handleChange = e => {
 		setNewOrder({ ...newOrder, [e.target.id]: e.target.value });
 	};
-
-	const setDate = () => {
-		console.log('63 ', newOrder.selectedDate);
-		console.log('63 ', newOrder.orderType);
-	};
-
-	// const handleClick = e => {
-	// 	setThanks(!thanks);
-	// };
 
 	return (
 		<div className="OrderForm">
@@ -98,6 +85,7 @@ const OrderForm = props => {
 								<p>
 									Date selected:{' '}
 									<b>{moment(selectedDate).format('MMMM DD, YYYY')}</b>
+									{console.log(selectedDate)}
 								</p>
 							</div>
 							<div className="calendar">
