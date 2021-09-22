@@ -15,6 +15,8 @@ const Calendar = ({ props, selectedDate, setSelectedDate }) => {
 	};
 
 	const disable = [
+		new Date(2021, 8, 4),
+		new Date(2021, 8, 7),
 		new Date(2021, 8, 22),
 		new Date(2021, 8, 24)
 		// { daysOfWeek: [1, 2] }
