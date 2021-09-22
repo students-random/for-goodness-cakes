@@ -1,10 +1,10 @@
 import React from 'react';
-import { InlineWidget } from 'react-calendly';
+import { PopupButton } from 'react-calendly';
 
 const Calendly = () => {
 	return (
 		<div className="Calendly">
-			<InlineWidget url="https://calendly.com/seirhypatia" />
+			<PopupButton url="https://calendly.com/seirhypatia" />
 		</div>
 	);
 };
