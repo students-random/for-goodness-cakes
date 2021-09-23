@@ -12,7 +12,7 @@ export default function Admin(props) {
 		password: ''
 	});
 	const [loggedInUser, setLoggedInUser] = useState('');
-	const [viewOrder, setViewOrder] = useState(false);
+	const [viewOrder, setViewOrder] = useState(true);
 	const [viewContact, setViewContact] = useState(false);
 	const [viewDisable, setViewDisable] = useState(false);
 	const [viewAnnouc, setViewAnnouc] = useState(false);

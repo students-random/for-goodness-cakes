@@ -4,7 +4,11 @@ import { PopupButton } from 'react-calendly';
 const Calendly = () => {
 	return (
 		<div className="Calendly">
-			<PopupButton url="https://calendly.com/seirhypatia" />
+			<PopupButton
+				url="https://calendly.com/seirhypatia"
+				text="Click to Schedule a Consultation"
+				className="btn-submit"
+			/>
 		</div>
 	);
 };
