@@ -1,8 +1,10 @@
 const { Schema, model } = require ('mongoose');
 
 const announcementSchema = new Schema({
-name: { type: String, required: true },
-body: { type: String, required: true }
+  name: { type: String },
+  paragraph1: { type: String, required: true },
+  paragraph2: { type: String},
+  paragraph3: { type: String}
 },{
   timestamps: true
 })

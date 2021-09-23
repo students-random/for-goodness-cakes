@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
 const announcementController = require ('./controllers/announcementControllers');
-// const calendarController = require('./controllers/cal');
+const flavorController = require ('./controllers/flavorControllers');
 const { hash, register, login } = require('./controllers/auth');
 
 const MONGODB_URI = process.env.MONGODB_URI
@@ -29,6 +29,7 @@ app.use('/api/announcement', announcementController);
 app.post('/api/register', register);
 app.post('/api/login', login);
 app.use('/api/register', require('./controllers/userControllers'));
+app.use('/api/flavor', flavorController);
 // app.use('/api/calendarControllers', calendarController);
 // app.use('/api/userControllers', userAuthController);
 /* Controller Ends here */
