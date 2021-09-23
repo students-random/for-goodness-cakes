@@ -1,0 +1,11 @@
+.Faqs {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px 30px 40px;
+  background-color: $off-white;
+
+  h1 {
+    font-size: calc(50px + 1vw);
+    margin-bottom: 30px;
+  }
+}

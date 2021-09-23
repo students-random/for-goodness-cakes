@@ -4,7 +4,7 @@ const userRouter = require('express').Router();
 
 // create route is in server.js
 
-// Create
+// Read (Show)
 userRouter.get('/', async (req, res) => {
   try {
     const foundUsers = await User.find({})
@@ -15,7 +15,7 @@ userRouter.get('/', async (req, res) => {
   }
 });
 
-// Read (Show)
+// Read (Index)
 userRouter.get('/:id', async (req, res) => {
   try {
     const foundUser = await User.findById(req.params.id)
