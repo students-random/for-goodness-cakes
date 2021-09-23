@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
 const announcementController = require ('./controllers/announcementControllers');
+const flavorController = require ('./controllers/flavorControllers');
 const contactSubmissonController = require ('./controllers/contactSubmissionControllers');
 const orderController = require ('./controllers/orderControllers');
 // const calendarController = require('./controllers/cal');
@@ -33,6 +34,7 @@ app.use('/api/contactsubmissions', contactSubmissonController);
 app.post('/api/register', register);
 app.post('/api/login', login);
 app.use('/api/register', require('./controllers/userControllers'));
+app.use('/api/flavor', flavorController);
 // app.use('/api/calendarControllers', calendarController);
 // app.use('/api/userControllers', userAuthController);
 /* Controller Ends here */
