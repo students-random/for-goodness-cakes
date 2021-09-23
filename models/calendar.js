@@ -1,3 +1,4 @@
+
 const { Schema, model } = require ('mongoose');
 
 const calendarSchema = new Schema({
@@ -8,3 +9,4 @@ const calendarSchema = new Schema({
 })
 
 module.exports = model('Calendar', calendarSchema);
+
