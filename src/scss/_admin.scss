@@ -1,0 +1,50 @@
+.Admin {
+  background-color: $off-white;
+  min-height:75vh;  //I have this here because I want the Thank You page to be full length.
+                //unless you know of another way?
+
+  h1 {
+    font-size: calc(50px + 1vw);
+    margin-bottom: 50px;
+    padding-top: 30px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    button{
+      border: none;
+      background-color: $off-white;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+}
+
+// ===== Log In Componet =====
+.LogIn {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+
+  .log-in-btns{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+// ===== Orders Component =====
+.Orders {
+  padding: 5% 10% 0 10%;
+
+}
+
+// ===== ContactSubmissions Component =====
+.ContactSubmissions {
+  padding: 5% 10% 5% 10%;
+
+}

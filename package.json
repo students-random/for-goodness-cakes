@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": ">=12.16.3"
+    "node": "14.17.0"
   },
   "name": "big-poppa-code-react-starter-kit",
   "version": "0.1.0",
@@ -61,6 +61,10 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.2"
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.2",
+    "react-calendly": "^2.2.1",
+    "react-day-picker": "^7.4.10",
+    "reactstrap": "^8.10.0" 
   }
 }

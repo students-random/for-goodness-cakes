@@ -1,0 +1,38 @@
+.HomePage {
+  background-color: $off-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.carousel {
+
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  section.how-to-order {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 0.4em solid $pink;
+    margin: 2em 5em;
+
+    div.hto-item-container {
+      display: flex;
+      flex-direction: row;
+      div.how-to-order-item {
+        border: 0.4em solid red;
+      }
+      img {
+
+      }
+      p {
+
+      }
+    }
+  }
+}
