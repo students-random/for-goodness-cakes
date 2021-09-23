@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LogIn from '../components/LogIn';
 // import Annoucements from '../components/Annoucements';
 import Orders from '../components/Orders';
+import DisableDay from '../components/DisableDay';
 import ContactSubmissions from '../components/ContactSubmissions';
 
 export default function Admin(props) {
@@ -49,12 +50,15 @@ export default function Admin(props) {
 					<div className="links">
 						<h1>Orders</h1>
 						<h1>'Contact Me' Submissions</h1>
+						<h1>Disable Dates</h1>
+						<h1>Annoucements</h1>
 
 						<button onClick={logout} className="">
 							{' '}
 							<h1>Log Out</h1>
 						</button>
 					</div>
+					<DisableDay />
 					<Orders />
 					<ContactSubmissions />
 				</>
