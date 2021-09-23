@@ -15,24 +15,66 @@
 
   section.how-to-order {
     display: flex;
-    width: 75%;
+    width: 90%;
+    max-width: 940px;
+    max-height: 422px;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     border: 0.4em solid $pink;
     margin: 2em 5em;
+
+    h1 {
+      font-size: 50px;
+      margin: 0.2em 0 -0.3em 0;
+    }
 
     div.hto-item-container {
       display: flex;
       flex-direction: row;
-      div.how-to-order-item {
-        border: 0.4em solid red;
+      margin: 0 5em 2em 5em;
+      div:nth-of-type(2) {
+        margin: 0 5em;
       }
+
+      div.how-to-order-item {
+          align-self: flex-end;
+      }
+
       img {
 
       }
-      p {
 
+      p {
+        color: $wine;
+        padding-left: 11px;
       }
     }
+    /* ↓↓↓↓↓↘ Start - Media Query ↙↓↓↓↓↓ */
+      @media (max-width: 900px) {
+        flex-direction: column;
+        max-height: none;
+        max-width: none;
+        width: 90%;
+        height: auto;
+        align-items: center;
+        border: 0.4em solid $pink;
+        margin: 2em auto;
+        padding-bottom: 1em;
+
+        h1 {
+          font-size: 50px;
+          margin: 0.4em 0 0.3em 0;
+        }
+
+        div.hto-item-container {
+          flex-direction: column;
+          margin: 0 3em 2em 3em;
+          div:nth-of-type(2) {
+            margin: 0 auto;
+            padding-top: 1.5em;
+          }
+        }
+      }
+      /* ↑↑↑↑↑↖ End - Media Query ↗↑↑↑↑↑ */
   }
 }
