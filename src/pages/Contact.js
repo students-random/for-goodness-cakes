@@ -78,9 +78,11 @@ export default function Contact(props) {
 								onChange={handleChange}
 							></textarea>
 						</div>
-						<button className="btn-main" type="submit">
-							Submit
-						</button>
+						<div className="text-right">
+							<button className="btn-main" type="submit">
+								Submit
+							</button>
+						</div>
 					</form>
 				</>
 			)}

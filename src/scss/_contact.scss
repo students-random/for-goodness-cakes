@@ -1,6 +1,8 @@
 .ContactPage {
   background-color: $off-white;
-  height:80vh;  //I have this here because I want the Thank You page to be full length.
+  border: solid  $off-white;
+  padding: 0 20% 0 20%;
+  min-height:80vh;  //I have this here because I want the Thank You page to be full length.
                 //unless you know of another way?
 
  h1 {
@@ -9,25 +11,24 @@
    padding-top: 30px;
 }
  .name-email-div {
-     width: 1114px;
+     width: 100%;
      margin: 0 auto;
      margin-bottom: 53px;
  }
  .email-label {
-    width: 537px;
+      width: 100%;
  }
  .name-label{
-    width: 537px;
+    width: 27vw;
  }
 
  #email, #name {
-   width: 537px;
-   height: 59px;
-   border: 2px solid #000000;
+   min-width: 28vw;
+   height: 6vh;
  }
 
  #textarea {
-   height: 350px;
+   height: 18.2vh;
    border: 2px solid #000000;
  }
 
@@ -40,7 +41,11 @@
  label {
    margin-bottom: 1px;
    font-family: Playfair Display;
-   font-size: 36px;
+   font-size: calc(17px + 1vw);
    line-height: 48px;
+ }
+
+ button {
+   margin-bottom: 100px;
  }
 }
