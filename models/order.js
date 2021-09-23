@@ -1,11 +1,13 @@
 const { Schema, model } = require ('mongoose');
 
 const orderSchema = new Schema({
-	selectedDate: { type: String, required: true},
+	selectedDate: { type: String},
 	orderType: { type: String, required: true},
-	flavor: { type: String, required: true},
+	flavor: { type: String},
 	ideas: { type: String},
-	allergies: { type: String}
+	allergies: { type: String},
+	name: {type: String, required: true},
+	email: {type: String, required: true}
 },{
   timestamps: true
 })
