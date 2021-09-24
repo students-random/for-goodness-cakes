@@ -23,7 +23,7 @@ const Footer = props => {
 			</section>
 			<img className="footer-img" src="/img/for-goodness-cakes-logo-dark.png" />
 			<Link to={'/admin'}>
-				<a style={{ color: '#787878' }}>Admin</a>
+				<a className="admin-link">Admin</a>
 			</Link>
 		</footer>
 	);

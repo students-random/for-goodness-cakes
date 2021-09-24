@@ -4,8 +4,8 @@
   flex-direction: column;
   align-items: center;
 
-  div.carousel {
-
+  h1 {
+    font-size: 50px;
   }
 
   img {
@@ -24,7 +24,6 @@
     margin: 2em 5em;
 
     h1 {
-      font-size: 50px;
       margin: 0.2em 0 -0.3em 0;
     }
 
@@ -38,10 +37,6 @@
 
       div.how-to-order-item {
           align-self: flex-end;
-      }
-
-      img {
-
       }
 
       p {
@@ -77,4 +72,134 @@
       }
       /* ↑↑↑↑↑↖ End - Media Query ↗↑↑↑↑↑ */
   }
+  section.bulletin-board {
+    display: flex;
+    width: 60%;
+    max-width: 564px;
+    max-height: 253.2px;
+    flex-direction: row;
+    align-items: stretch;
+    border: 0.4em solid $pink;
+    margin: 2em 5em;
+
+    section.board-item {
+      flex: 0 0 50%;
+    }
+
+    section.calendly {
+      padding: 0 0.9em;
+
+      p.calendar-placeholder {
+        border: 0.1em solid $pink;
+        padding-left: 5px;
+        height: 10vw;
+        max-height: 102px;
+      }
+    }
+  }
+
+  div.horizontal-line {
+    border: 0.1em solid $pink;
+    height: 13em;
+    margin: 1em 0;
+    align-self: center;
+  }
+
+  section.annoucements {
+
+    h6 {
+      text-align: center;
+      padding-top: 0.5em;
+    }
+
+    section.announcements-text {
+      margin: -0.4em 1em 0.5em 1em;
+      padding: 0.5em 0.5em 0 0.5em;
+      border: 0.1em solid $pink;
+      max-width: 243px;
+      max-height: 200px;
+
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+
+  section.reviews {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 2.5em 0;
+    font-size: 2vh;
+
+    section.review {
+      padding: 2em 1.5em 0.1em 1.5em;
+      background-color: $pink;
+    }
+
+    section.review-left {
+      margin-right: 0.5em;
+    }
+    
+    section.review-right {
+      margin-left: 0.5em;
+    }
+  }
+
+  /* ↓↓↓↓↓↘ Start - Media Query - Bulletin Board ↙↓↓↓↓↓ */
+  @media (max-width: 900px) {
+    section.bulletin-board {
+      flex-direction: column;
+      width: 90%;
+      max-height: none;
+      max-width: none;
+      align-items: center;
+      margin: 1em 5em;
+      padding: 1em 0;
+
+      section.calendly {
+
+        p.calendar-placeholder {
+          border: 0.1em solid $pink;
+          margin-top: 15px;
+          padding-left: 0;
+          padding-top: 25px;
+          text-align: center;
+          height: 20vw;
+          max-height: 102px;
+        }
+      }
+
+      div.horizontal-line {
+        border: 0.1em solid $pink;
+        height: 0;
+        width: 19em;
+        margin: 1em 0;
+        align-self: center;
+      }
+
+      section.annoucements {
+
+        h6 {
+          text-align: center;
+          padding-top: 0.5em;
+        }
+
+        section.announcements-text {
+          margin: 0 auto;
+          padding: 0.5em 0.5em 0 0.5em;
+          border: 0.1em solid $pink;
+          max-width: none;
+          max-height: none;
+          width: 310px;
+          height: 200px;
+
+            p {
+              font-size: 0.7em;
+            }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑↖ End - Media Query - Bulletin Board ↗↑↑↑↑↑ */
 }

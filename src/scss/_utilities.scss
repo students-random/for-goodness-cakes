@@ -1,6 +1,10 @@
 @import "reset";
 @import "grid";
 
+a {
+  text-decoration: none !important;
+}
+
 h1 {
   font-family: 'Allison', cursive;
   text-align: center;
