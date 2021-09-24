@@ -47,7 +47,7 @@ const Annoucements = props => {
 								</tr>
 							</thead>
 
-							{annoucements.map((annoucement) => {
+							{annoucements.map(annoucement => {
 								return (
 									<>
 										<tbody>

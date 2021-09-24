@@ -6,6 +6,7 @@ const OrderForm = props => {
 	const [selectedDate, setSelectedDate] = useState({});
 	const [orders, setOrders] = useState([]);
 	const [thanks, setThanks] = useState(false);
+	const [calendarUpdate, setCalendarUpdate] = useState('');
 	const [newOrder, setNewOrder] = useState({
 		selectedDate: `${selectedDate}`,
 		orderType: '',
@@ -48,9 +49,10 @@ const OrderForm = props => {
 			});
 			const data = await response.json();
 			setSelectedDate(selectedDate);
-
 			setOrders([...orders, data]);
 			setThanks(!thanks);
+
+			setCalendarUpdate([newOrder.selectedDate]);
 		} catch (error) {
 			console.error(error);
 		}
@@ -85,13 +87,14 @@ const OrderForm = props => {
 								<p>
 									Date selected:{' '}
 									<b>{moment(selectedDate).format('MMMM DD, YYYY')}</b>
-									{console.log(selectedDate)}
 								</p>
 							</div>
 							<div className="calendar">
 								<Calendar
 									selectedDate={selectedDate}
 									setSelectedDate={setSelectedDate}
+									fromOrderForm={true}
+									calendarUpdate={calendarUpdate}
 								/>
 							</div>
 						</div>
