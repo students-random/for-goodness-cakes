@@ -59,6 +59,7 @@
 .ContactSubmissions {
   padding: 0 10% 5% 10%;
 }
+
 // ===== Disabled Day Component =====
 .DisableDay{
     display: flex;
@@ -74,5 +75,28 @@
       padding: 30px;
       margin-bottom: 30px;
     }
+}
 
+// ===== Annoucement Component =====
+.Annoucements{
+  padding: 0 10% 0 10%;
+}
+
+// ===== Update Annoucement Component =====
+.UpdateAnnoucement{
+    textarea {
+      margin: 5px;
+    }
+
+    div.update {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      div.update-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
 }

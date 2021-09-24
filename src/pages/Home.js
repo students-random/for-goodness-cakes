@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import Calendly from './Calendly';
 import HomeCarousel from '../components/Carousel';
+import Calendar from '../components/Calendar';
 
 export default function Home(props) {
 	return (
@@ -40,8 +41,7 @@ export default function Home(props) {
 				<section className="calendly board-item">
 					<Calendly />
 					<p className="calendar-placeholder">
-						{/* Placeholder for styling. Delete or refactor this when calender is good to go ☢ */}
-						I'm a placeholder. Hello.
+						<Calendar fromOrderForm={false} />
 					</p>
 				</section>
 

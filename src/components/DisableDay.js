@@ -23,11 +23,6 @@ const DisableDay = ({ props, selectedDate, setSelectedDate }) => {
 			});
 			const data = await response.json();
 			setDay([...day, data]);
-			// fetchData();
-			// toggleForm();
-			console.log(data);
-			console.log(day);
-			console.log(newDay);
 			setNewDay({
 				year: '',
 				month: '',
@@ -35,6 +30,8 @@ const DisableDay = ({ props, selectedDate, setSelectedDate }) => {
 			});
 		} catch (error) {
 			console.error(error);
+		} finally {
+			window.location.assign('/admin');
 		}
 	};
 
