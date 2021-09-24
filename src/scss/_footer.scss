@@ -9,7 +9,6 @@ footer.footer {
   align-items: center;
   gap: 20em;
 
-
   section {
     h4 {
     font-weight: 900;
@@ -36,6 +35,12 @@ footer.footer {
   img.footer-img {
     width: auto;
     height: 150px;
+  }
+  a.admin-link {
+    color: $pink;
+  }
+  a.admin-link:hover {
+    color: $wine;
   }
   // ===== Begin Media Query =====
   @media (max-width: 1076px) {
