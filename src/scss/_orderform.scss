@@ -1,48 +1,67 @@
 .OrderForm {
   margin: 0 20% 0 20%;
+  font-family: 'Playfair Display', serif;
 
   h1 {
     font-size: calc(50px + 1vw);
+    padding-top: 30px;
     margin-bottom: 30px;
   }
 
-  .form {
-    // border: solid purple;
+  div.form {
     display: flex;
     flex-direction: column;
 
-    .delivery-calendar-div {
-      justify-content: center;
+    div.delivery-calendar-div {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      border: 1px solid #a0a096;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 1em 2em 3.5em 2em;
+      border: 0.1em solid $black;
 
       .delivery-text {
-        // border: solid blue;
         width: 350px;
         max-width: 100%;
       }
     }
+
     .question {
-      // border: solid pink;
+      // ===== Make a Selection =====
+      select#orderType {
+        margin: 0.3em 0 2.5em 2em;
+      }
 
       .label {
-        // border: solid black;
         width: 100%;
       }
+
     .actual-form{
-      // border: solid orange;
-      width:  100%;
+      width: 100%;
       }
+
       textarea{
         box-sizing: border-box;
         width: 100%;
+        margin: 1.75em 2em;
+      }
+
+      input {
+        margin: 0.5em 0 1em 2em;
       }
     }
+
+    div.form-check {
+      border: 0.1em solid red;
+      margin: 0 0 1em 2em;
+      /* =========== ☢ Stopped Here ☢  ==========*/
+    }
+
   }
 }
-// ===== Day-Picker Styles==================================================
+/* ===== Day-Picker Styles =====*/
+/* ↓↓↓↓↓↘ ===== WARNING ===== ↙↓↓↓↓↓ */
+/* ===== WARNING - don't touch anyting below here. It came with the calendar. ===== */
 
 .DayPicker {
   width: 350px;
@@ -50,7 +69,6 @@
   display: inline-block;
   font-size: 1rem;
   // background: white;
-
 }
 
 .DayPicker-wrapper {

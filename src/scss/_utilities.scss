@@ -1,6 +1,10 @@
 @import "reset";
 @import "grid";
 
+body {
+  background-color: $off-white !important;
+}
+
 a {
   text-decoration: none !important;
 }
