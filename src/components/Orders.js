@@ -54,6 +54,12 @@ const Orders = props => {
 									<th scope="col" className="font-weight-bold">
 										Allergies
 									</th>
+									<th scope="col" className="font-weight-bold">
+										Name
+									</th>
+									<th scope="col" className="font-weight-bold">
+										Email
+									</th>
 									<th scope="col"></th>
 								</tr>
 							</thead>
@@ -71,6 +77,8 @@ const Orders = props => {
 												<td>{order.flavor}</td>
 												<td>{order.ideas}</td>
 												<td>{order.allergies}</td>
+												<td>{order.name}</td>
+												<td>{order.email}</td>
 												<td>
 													<button
 														onClick={() => toggleShowUpdateForm(order, index)}

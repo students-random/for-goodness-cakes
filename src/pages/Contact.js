@@ -21,7 +21,7 @@ export default function Contact(props) {
 				body: JSON.stringify(newSubmission)
 			});
 			const data = await response.json();
-			handleClick();
+			setThanks(!thanks);
 			setNewSubmission({
 				name: '',
 				email: '',
@@ -34,11 +34,6 @@ export default function Contact(props) {
 
 	const handleChange = e => {
 		setNewSubmission({ ...newSubmission, [e.target.id]: e.target.value });
-	};
-
-	const handleClick = e => {
-		// e.preventDefault();
-		setThanks(!thanks);
 	};
 
 	return (
@@ -83,9 +78,11 @@ export default function Contact(props) {
 								onChange={handleChange}
 							></textarea>
 						</div>
-						<button className="btn-main" type="submit">
-							Submit
-						</button>
+						<div className="text-right">
+							<button className="btn-main" type="submit">
+								Submit
+							</button>
+						</div>
 					</form>
 				</>
 			)}
