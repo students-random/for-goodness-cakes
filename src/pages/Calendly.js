@@ -6,8 +6,9 @@ const Calendly = () => {
 		<div className="Calendly">
 			<PopupButton
 				url="https://calendly.com/seirhypatia"
-				text="Click to Schedule a Consultation"
+				text="Click for Consultation"
 				className="btn-submit"
+				styles={{ marginBottom: '5px', height: '40px', maxWidth: '238px' }}
 			/>
 		</div>
 	);
