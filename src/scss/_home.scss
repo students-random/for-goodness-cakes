@@ -1,5 +1,4 @@
 .HomePage {
-  background-color: $off-white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +10,10 @@
   img {
     width: 100%;
     height: auto;
+  }
+
+  div.carousel {
+    width: 100%;
   }
 
   section.how-to-order {
@@ -140,7 +143,7 @@
     section.review-left {
       margin-right: 0.5em;
     }
-    
+
     section.review-right {
       margin-left: 0.5em;
     }
