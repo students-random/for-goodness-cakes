@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react';
+import emailjs, { init } from 'emailjs-com';
 import moment from 'moment';
 import Calendar from '../components/Calendar';
 
 const OrderForm = props => {
+	const [disabledDay, setDisabledDay] = useState([]);
+	const [newDisabledDay, setNewDisabledDay] = useState([]);
 	const [selectedDate, setSelectedDate] = useState({});
 	const [orders, setOrders] = useState([]);
 	const [thanks, setThanks] = useState(false);
-	const [calendarUpdate, setCalendarUpdate] = useState('');
 	const [newOrder, setNewOrder] = useState({
 		selectedDate: `${selectedDate}`,
 		orderType: '',
@@ -36,9 +38,28 @@ const OrderForm = props => {
 		'Cakesicles'
 	]);
 
+	// const data = async () => {
+	// 	const response = await fetch('/api/disableddate');
+	// 	const data = await response.json();
+	//
+	// 	for (let i = 0; i < data.length; i++) {
+	// 		let updatedData = new Date(data[i].year, data[i].month, data[i].day);
+	// 		setDisabledDay(disabledDay => [...disabledDay, updatedData]);
+	// 	}
+	// };
+
+	//================ handleSubmit function updates Orders database (start) =======
 	const handleSubmit = async e => {
 		e.preventDefault();
 		newOrder.selectedDate = moment(selectedDate).format('MMMM DD, YYYY');
+
+		console.log('neworder.selectedDate', newOrder.selectedDate);
+		let year = moment(selectedDate).format('YYYY');
+		let month = moment(selectedDate).format('MM');
+		let day = moment(selectedDate).format('DD');
+		let updatedData = new Date(year, month, day);
+
+		sendEmail(e);
 		try {
 			const response = await fetch('/api/orders', {
 				method: 'POST',
@@ -48,11 +69,14 @@ const OrderForm = props => {
 				body: JSON.stringify(newOrder)
 			});
 			const data = await response.json();
+
 			setSelectedDate(selectedDate);
 			setOrders([...orders, data]);
 			setThanks(!thanks);
 
-			setCalendarUpdate([newOrder.selectedDate]);
+			// setNewDisabledDay(updatedData);
+			setNewDisabledDay(selectedDate);
+			disableDateViaCalendar();
 		} catch (error) {
 			console.error(error);
 		}
@@ -61,6 +85,59 @@ const OrderForm = props => {
 	const handleChange = e => {
 		setNewOrder({ ...newOrder, [e.target.id]: e.target.value });
 	};
+	//================ handleSubmit function updates Orders database (end) =========
+
+	//============== Function to disable date via calendar (start)==================
+	const disableDateViaCalendar = async () => {
+		try {
+			const response = await fetch('/api/disableddate', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(newDisabledDay)
+			});
+			const data = await response.json();
+			setDisabledDay(disabledDay => [...disabledDay, data]);
+			console.log('inside 99');
+			setNewDisabledDay([]);
+			return data;
+		} catch (error) {
+			console.error(error);
+		}
+	};
+	//================ Function to disable date via calendar (end)==================
+
+	//================== Function to send email to baker (start)====================
+	const templateParams = {
+		user_name: newOrder.name,
+		user_email: newOrder.email,
+		delivery_pickup: moment(selectedDate).format('MMMM DD, YYYY'),
+		orderType: newOrder.orderType,
+		flavor: newOrder.flavor,
+		ideas: newOrder.ideas,
+		allergies: newOrder.allergies
+	};
+
+	const sendEmail = async e => {
+		e.preventDefault();
+		emailjs
+			.send(
+				'service_uy4xefh',
+				'template_6lngxqs',
+				templateParams,
+				'user_HiF2ZhDSYEd3b5ieU6zN6'
+			)
+			.then(
+				function(response) {
+					console.log('SUCCESS!', response.status, response.text);
+				},
+				function(err) {
+					console.log('FAILED...', err);
+				}
+			);
+	};
+	//==================== Function to send email to baker (end)====================
 
 	return (
 		<div className="OrderForm">
@@ -94,7 +171,6 @@ const OrderForm = props => {
 									selectedDate={selectedDate}
 									setSelectedDate={setSelectedDate}
 									fromOrderForm={true}
-									calendarUpdate={calendarUpdate}
 								/>
 							</div>
 						</div>
@@ -106,7 +182,12 @@ const OrderForm = props => {
 							<label className="question">
 								{' '}
 								<h4 className="label">2. What would you like to order?</h4>
-								<select onChange={handleChange} id="orderType" required>
+								<select
+									onChange={handleChange}
+									id="orderType"
+									name="orderType"
+									required
+								>
 									<option value="" disabled={true} selected>
 										Make A Selection
 									</option>
@@ -127,6 +208,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[0]}
 										onChange={handleChange}
 									/>
@@ -137,6 +219,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[1]}
 										onChange={handleChange}
 									/>
@@ -147,6 +230,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[2]}
 										onChange={handleChange}
 									/>
@@ -157,6 +241,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[3]}
 										onChange={handleChange}
 									/>
@@ -167,6 +252,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[4]}
 										onChange={handleChange}
 									/>
@@ -177,6 +263,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[5]}
 										onChange={handleChange}
 									/>
@@ -187,6 +274,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[6]}
 										onChange={handleChange}
 									/>
@@ -197,6 +285,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[7]}
 										onChange={handleChange}
 									/>
@@ -207,6 +296,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[8]}
 										onChange={handleChange}
 									/>
@@ -217,6 +307,7 @@ const OrderForm = props => {
 										className="form-check-input"
 										type="checkbox"
 										id="flavor"
+										name="flavor"
 										value={flavorData[9]}
 										onChange={handleChange}
 									/>
@@ -234,6 +325,7 @@ const OrderForm = props => {
 									cols="40"
 									type="text"
 									id="ideas"
+									name="ideas"
 									placeholder="Type your ideas here..."
 									onChange={handleChange}
 								/>
@@ -248,6 +340,7 @@ const OrderForm = props => {
 									cols="40"
 									type="text"
 									id="allergies"
+									name="allergies"
 									placeholder="Type your comment here..."
 									onChange={handleChange}
 								/>
@@ -256,6 +349,7 @@ const OrderForm = props => {
 								<h4 className="label">6. Name</h4>
 								<input
 									type="text"
+									name="user_name"
 									id="name"
 									placeholder="Full Name"
 									required
@@ -267,6 +361,7 @@ const OrderForm = props => {
 								<h4 className="label">7. Email</h4>
 								<input
 									type="email"
+									name="user_email"
 									id="email"
 									placeholder="name@example.com"
 									required
