@@ -4,7 +4,7 @@
   align-items: center;
 
   h1 {
-    font-size: 50px;
+    font-size: 72px;
   }
 
   img {
@@ -18,9 +18,11 @@
 
   section.how-to-order {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
-    max-width: 940px;
-    max-height: 422px;
+    max-width: 1339px;
+    max-height: 695px;
+
     flex-direction: column;
     align-items: center;
     border: 0.4em solid $pink;
@@ -78,52 +80,58 @@
   section.bulletin-board {
     display: flex;
     width: 60%;
-    max-width: 564px;
-    max-height: 253.2px;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: stretch;
     border: 0.4em solid $pink;
     margin: 2em 5em;
+    width: 874px;
+    height: 435px;
 
     section.board-item {
       flex: 0 0 50%;
     }
 
     section.calendly {
-      padding: 0 0.9em;
+      padding-top: 15px;
+      text-align: center;
 
       p.calendar-placeholder {
-        border: 0.1em solid $pink;
-        padding-left: 5px;
-        height: 10vw;
-        max-height: 102px;
+        width: 380px;
+        height: 315px;
+        margin: 0 auto;
       }
     }
   }
 
   div.horizontal-line {
     border: 0.1em solid $pink;
-    height: 13em;
-    margin: 1em 0;
+    height: 19em;
+    margin-top: 7%;
     align-self: center;
+
   }
 
   section.annoucements {
+     padding-top: 15px;
 
     h6 {
       text-align: center;
       padding-top: 0.5em;
+      height: 54px;
+      font-size: 24px;
     }
 
     section.announcements-text {
       margin: -0.4em 1em 0.5em 1em;
-      padding: 0.5em 0.5em 0 0.5em;
+      padding: 25px;
       border: 0.1em solid $pink;
-      max-width: 243px;
-      max-height: 200px;
+      width: 380px;
+      height: 315px;
 
       p {
-        font-size: 10px;
+        font-size: 16px;
+
       }
     }
   }
@@ -152,53 +160,51 @@
   /* ↓↓↓↓↓↘ Start - Media Query - Bulletin Board ↙↓↓↓↓↓ */
   @media (max-width: 900px) {
     section.bulletin-board {
-      flex-direction: column;
-      width: 90%;
+      flex-direction: row;
+      width: 100%;
+      height: 0%;
       max-height: none;
       max-width: none;
       align-items: center;
       margin: 1em 5em;
-      padding: 1em 0;
+      padding: 0;
+      max-width: 320px;
+      justify-content: center;
 
       section.calendly {
+        width: 80%;
+        font-size: 0.9em;
 
         p.calendar-placeholder {
-          border: 0.1em solid $pink;
-          margin-top: 15px;
           padding-left: 0;
-          padding-top: 25px;
           text-align: center;
-          height: 20vw;
-          max-height: 102px;
+          width: 90%;
         }
       }
 
       div.horizontal-line {
-        border: 0.1em solid $pink;
-        height: 0;
-        width: 19em;
-        margin: 1em 0;
-        align-self: center;
+        visibility: hidden;
       }
 
       section.annoucements {
+          width: 90%;
 
         h6 {
           text-align: center;
           padding-top: 0.5em;
+          margin-bottom: -7px;
         }
 
         section.announcements-text {
           margin: 0 auto;
-          padding: 0.5em 0.5em 0 0.5em;
+          padding: 1.5em 1.5em .5em 1.5em;
           border: 0.1em solid $pink;
-          max-width: none;
-          max-height: none;
-          width: 310px;
-          height: 200px;
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 15px;
 
             p {
-              font-size: 0.7em;
+              font-size: 0.9em;
             }
         }
       }

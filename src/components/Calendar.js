@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DayPicker from 'react-day-picker';
 // import 'react-day-picker/lib/style.css';
 
-const Calendar = ({
-	props,
-	selectedDate,
-	setSelectedDate,
-	fromOrderForm,
-	calendarUpdate
-}) => {
+const Calendar = ({ props, selectedDate, setSelectedDate, fromOrderForm }) => {
 	const [disabledDay, setDisabledDay] = useState([]);
 
 	const handleDayClick = (day, { selected, disabled }) => {
@@ -22,10 +16,6 @@ const Calendar = ({
 		setSelectedDate(day);
 	};
 
-	// const updateTheCalendar = () => {
-	// 	setDisabledDay(calendarUpdate)
-	// }
-
 	useEffect(() => {
 		(async () => {
 			try {
@@ -33,8 +23,11 @@ const Calendar = ({
 				const data = await response.json();
 
 				for (let i = 0; i < data.length; i++) {
-					let updatedData = new Date(data[i].year, data[i].month, data[i].day);
-					console.log('33', calendarUpdate);
+					let updatedData = new Date(
+						data[i].year,
+						data[i].month - 1,
+						data[i].day
+					);
 					setDisabledDay(disabledDay => [...disabledDay, updatedData]);
 				}
 			} catch (error) {
