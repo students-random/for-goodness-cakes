@@ -105,6 +105,7 @@ const LogIn = ({
 							</div>
 							<div className="log-in-btns">
 								<input type="submit" value="Log In" />
+								{/* ======================= disabled so only 'demo' password works ===============
 								<input
 									type="button"
 									onClick={() => {
@@ -112,7 +113,8 @@ const LogIn = ({
 										displayForm();
 									}}
 									value="Create New Account"
-								/>
+								/>   ======================= disabled so only 'demo' password works ===============
+								*/}
 							</div>
 						</form>
 					</div>
