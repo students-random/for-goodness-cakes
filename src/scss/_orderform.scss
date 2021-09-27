@@ -52,11 +52,22 @@
     }
 
     div.form-check {
-      border: 0.1em solid red;
       margin: 0 0 1em 2em;
-      /* =========== ☢ Stopped Here ☢  ==========*/
-    }
 
+      input#flavor.form-check-input {
+        transform: scale(1.5);
+      }
+
+      label.form-check-label {
+        margin-left: 0.2em;
+        margin-bottom: 0.5em;
+
+      }
+    }
+    /* =========== ☢ Working Here ☢  ==========*/
+    input.btn-main {
+      margin-bottom: 2.5em;
+    }
   }
 }
 /* ===== Day-Picker Styles =====*/
