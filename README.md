@@ -40,7 +40,7 @@ This website application was designed with the idea of taking a bakery, For Good
 
 
 ## Wireframes:
-
+ 
   Figma [wireframe handoffs](https://www.figma.com/file/wn1CBHf78At9NwYtotzk7g/P6-Wireframes?node-id=25%3A470) from UX team
 
 
