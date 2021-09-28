@@ -67,7 +67,6 @@ export default function Contact(props) {
 				<>
 					<h1>Contact Me</h1>
 					<form onSubmit={handleSubmit} id="contact-form">
-						}
 						<div className="row name-email-div">
 							<input type="hidden" name="contact_number" />
 							<div className="form-group col name-label">
