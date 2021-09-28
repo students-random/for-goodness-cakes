@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InlineWidget } from 'react-calendly';
-import Calendly from './Calendly';
+import Calendly from '../components/Calendly';
 import HomeCarousel from '../components/Carousel';
 import Calendar from '../components/Calendar';
 
