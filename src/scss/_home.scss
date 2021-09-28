@@ -1,11 +1,10 @@
 .HomePage {
-  background-color: $off-white;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  div.carousel {
-
+  h1 {
+    font-size: 72px;
   }
 
   img {
@@ -13,26 +12,203 @@
     height: auto;
   }
 
+  div.carousel {
+    width: 100%;
+  }
+
   section.how-to-order {
     display: flex;
-    width: 75%;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1339px;
+    max-height: 695px;
+
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     border: 0.4em solid $pink;
     margin: 2em 5em;
+
+    h1 {
+      margin: 0.2em 0 -0.3em 0;
+    }
 
     div.hto-item-container {
       display: flex;
       flex-direction: row;
-      div.how-to-order-item {
-        border: 0.4em solid red;
+      margin: 0 5em 2em 5em;
+      div:nth-of-type(2) {
+        margin: 0 5em;
       }
-      img {
 
+      div.how-to-order-item {
+          align-self: flex-end;
       }
+
       p {
+        color: $wine;
+        padding-left: 11px;
+      }
+    }
+    /* ↓↓↓↓↓↘ Start - Media Query ↙↓↓↓↓↓ */
+      @media (max-width: 900px) {
+        flex-direction: column;
+        max-height: none;
+        max-width: none;
+        width: 90%;
+        height: auto;
+        align-items: center;
+        border: 0.4em solid $pink;
+        margin: 2em auto;
+        padding-bottom: 1em;
+
+        h1 {
+          font-size: 50px;
+          margin: 0.4em 0 0.3em 0;
+        }
+
+        div.hto-item-container {
+          flex-direction: column;
+          margin: 0 3em 2em 3em;
+          div:nth-of-type(2) {
+            margin: 0 auto;
+            padding-top: 1.5em;
+          }
+        }
+      }
+      /* ↑↑↑↑↑↖ End - Media Query ↗↑↑↑↑↑ */
+  }
+  section.bulletin-board {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border: 0.4em solid $pink;
+    margin: 2em 5em;
+    width: 874px;
+    height: 435px;
+
+    section.board-item {
+      flex: 0 0 50%;
+    }
+
+    section.calendly {
+      padding-top: 15px;
+      text-align: center;
+
+      p.calendar-placeholder {
+        width: 380px;
+        height: 315px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  div.horizontal-line {
+    border: 0.1em solid $pink;
+    height: 19em;
+    margin-top: 7%;
+    align-self: center;
+
+  }
+
+  section.annoucements {
+     padding-top: 15px;
+
+    h6 {
+      text-align: center;
+      padding-top: 0.5em;
+      height: 54px;
+      font-size: 24px;
+    }
+
+    section.announcements-text {
+      margin: -0.4em 1em 0.5em 1em;
+      padding: 25px;
+      border: 0.1em solid $pink;
+      width: 380px;
+      height: 315px;
+
+      p {
+        font-size: 16px;
 
       }
     }
   }
+
+  section.reviews {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 2.5em 0;
+    font-size: 2vh;
+
+    section.review {
+      padding: 2em 1.5em 0.1em 1.5em;
+      background-color: $pink;
+    }
+
+    section.review-left {
+      margin-right: 0.5em;
+    }
+
+    section.review-right {
+      margin-left: 0.5em;
+    }
+  }
+
+  /* ↓↓↓↓↓↘ Start - Media Query - Bulletin Board ↙↓↓↓↓↓ */
+  @media (max-width: 900px) {
+    section.bulletin-board {
+      flex-direction: row;
+      width: 100%;
+      height: 0%;
+      max-height: none;
+      max-width: none;
+      align-items: center;
+      margin: 1em 5em;
+      padding: 0;
+      max-width: 320px;
+      justify-content: center;
+
+      section.calendly {
+        width: 80%;
+        font-size: 0.9em;
+
+        p.calendar-placeholder {
+          padding-left: 0;
+          text-align: center;
+          width: 90%;
+        }
+      }
+
+      div.horizontal-line {
+        visibility: hidden;
+      }
+
+      section.annoucements {
+          width: 90%;
+
+        h6 {
+          text-align: center;
+          padding-top: 0.5em;
+          margin-bottom: -7px;
+        }
+
+        section.announcements-text {
+          margin: 0 auto;
+          padding: 1.5em 1.5em .5em 1.5em;
+          border: 0.1em solid $pink;
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 15px;
+
+            p {
+              font-size: 0.9em;
+            }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑↖ End - Media Query - Bulletin Board ↗↑↑↑↑↑ */
 }

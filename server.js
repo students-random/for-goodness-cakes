@@ -5,9 +5,10 @@ const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
 const announcementController = require ('./controllers/announcementControllers');
+const flavorController = require ('./controllers/flavorControllers');
 const contactSubmissonController = require ('./controllers/contactSubmissionControllers');
 const orderController = require ('./controllers/orderControllers');
-// const calendarController = require('./controllers/cal');
+const disabledDateController = require ('./controllers/disabledDateControllers');
 const { hash, register, login } = require('./controllers/auth');
 
 const MONGODB_URI = process.env.MONGODB_URI
@@ -33,8 +34,9 @@ app.use('/api/contactsubmissions', contactSubmissonController);
 app.post('/api/register', register);
 app.post('/api/login', login);
 app.use('/api/register', require('./controllers/userControllers'));
-// app.use('/api/calendarControllers', calendarController);
-// app.use('/api/userControllers', userAuthController);
+app.use('/api/flavor', flavorController);
+app.use('/api/disableddate',disabledDateController);
+
 /* Controller Ends here */
 //LISTENER
 

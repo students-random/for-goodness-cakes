@@ -14,6 +14,8 @@ const UpdateOrder = ({
 	const flavorInput = useRef(null);
 	const ideasInput = useRef(null);
 	const allergiesInput = useRef(null);
+	const nameInput = useRef(null);
+	const emailInput = useRef(null);
 
 	const fetchData = async () => {
 		try {
@@ -39,7 +41,9 @@ const UpdateOrder = ({
 					orderType: orderTypeInput.current.value,
 					flavor: flavorInput.current.value,
 					ideas: ideasInput.current.value,
-					allergies: allergiesInput.current.value
+					allergies: allergiesInput.current.value,
+					name: nameInput.current.value,
+					email: emailInput.current.value
 				})
 			});
 			const data = await response.json();
@@ -79,6 +83,8 @@ const UpdateOrder = ({
 							<th scope="col">Flavors</th>
 							<th scope="col">Design Ideas</th>
 							<th scope="col">Allergies</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
 							<th scope="col"></th>
 							<th scope="col"></th>
 						</tr>
@@ -92,11 +98,17 @@ const UpdateOrder = ({
 							<td>{order.flavor}</td>
 							<td>{order.ideas}</td>
 							<td>{order.allergies}</td>
+							<td>{order.name}</td>
+							<td>{order.email}</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<form onSubmit={handleUpdate} data-order={order._id}>
+			<form
+				className="update-form"
+				onSubmit={handleUpdate}
+				data-order={order._id}
+			>
 				<tbody>
 					<tr>
 						<th scope="row">{index + 1}</th>
@@ -138,6 +150,22 @@ const UpdateOrder = ({
 								id="allergies"
 								ref={allergiesInput}
 								defaultValue={order.allergies}
+							/>
+						</td>
+						<td>
+							<input
+								type="text"
+								id="name"
+								ref={nameInput}
+								defaultValue={order.name}
+							/>
+						</td>
+						<td>
+							<input
+								type="email"
+								id="allergies"
+								ref={emailInput}
+								defaultValue={order.email}
 							/>
 						</td>
 						<td>

@@ -1,6 +1,14 @@
 @import "reset";
 @import "grid";
 
+body {
+  background-color: $off-white !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
 h1 {
   font-family: 'Allison', cursive;
   text-align: center;
