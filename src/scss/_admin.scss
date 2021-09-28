@@ -1,7 +1,6 @@
 .Admin {
   background-color: $off-white;
-  min-height:75vh;  //I have this here because I want the Thank You page to be full length.
-                //unless you know of another way?
+  min-height:75vh; 
 
   h1 {
     font-size: calc(35px + 1vw);

@@ -1,6 +1,6 @@
 # For Goodness Cakes
 
-This website application was designed with the idea of taking a bakery, For Goodness Cakes's, Instagram and turning it into a working site allowing baker to showcase goods, update an announcement bulletin and receive orders. Site allows users to schedule consultations, request an invoice and confirm orders placed.
+This website application was designed with the idea of taking a bakery, For Goodness Cakes's, Instagram and turning it into a working website. Site allows baker to showcase goods, update an announcement bulletin, receive Calendly consultation appointments, and receive emails of all orders and 'contact me' submissions. Site allows users to browse goods, schedule a consultation, submit an order and email the baker directly from the site.
 
 
 ## Project Team   
@@ -9,7 +9,7 @@ This website application was designed with the idea of taking a bakery, For Good
 **Yulia Penyevskaya** - Backend Engineer          [GitHub](https://github.com/Yuliap21)\
 **Amit Nema**         - Frontend/React Engineer   [GitHub](https://github.com/en-coded)\
 **Lilia Salas**       - Frontend/React Engineer   [GitHub](https://github.com/liliasn24)\
-**Jason Hargrove**    - Frontend/CSS Engineer     [GitHub](https://github.com/Jason-Hargrove)\
+**Jason Hargrove**    - Frontend/CSS Engineer     [GitHub](https://github.com/Jason-Hargrove)
 
 
 ## Project features:
@@ -18,20 +18,21 @@ This website application was designed with the idea of taking a bakery, For Good
   - Multiple models with full CRUD application
   - Authorization that includes sign up/login functionality, with encrypted passwords & an authorization flow
   - Use of React Router
-  - Use of Instagram/Facebook API to display comments and reviews
-  - Create working calendar from scratch that allows for scheduling and organization
-  - Updates client's Calendaly to mirror calendar availability on website
-
+  - Working calendar that allows for scheduling and organization
+  - Direct interaction with client's Calendaly
+  - Admin page with access/manipulation features for all orders, 'contact me' submissions, announcement bulletin, and calendar scheduling.
 
 ## User Stories:
 
-  1. Users visit the home page are greeted with a carousel of feature images, a bulletin board with updated information, calendar with scheduling options and scrolling reviews that pull from the baker's Instagram and Facebook account.
+  1. Users visit the home page are greeted with a carousel of featured images, a bulletin board with updated information, Calendly link with scheduling options and reviews from baker's Facebook.
 
-  2. Users can visit the menu with prices, flavors, and corresponding images that link to the baker's Instagram account.
+  2. Users can browse a menu with flavors and pricing, as well as an image gallery with corresponding Instagram links to that product's post.
 
-  3. Users can add items to their cart with an option to book a consultation. Once booked, the baker receives email with booking information and user gets confirmation email. Scheduling updates the calendar on the site regarding available dates. And updates baker's Calendly.  
+  3. User's can place an order via an order form that is sent directly to baker's email. User can browse a calendar with baker's availability as well as include design ideas and allergies with the order.
 
-  4. ...
+  4. User can read a snippet about the baker and an FAQ page.
+
+  5. User can send a direct email to the baker via the 'Contact Me' form.
 
 ## Product Management:
 
@@ -51,4 +52,6 @@ Node.js\
 MongoDB\
 Express\
 \
-Others..  
+To have emails sent to baker: Create an account on [EmailJS](https://www.emailjs.com). Input template ID, account ID, email services ID and template params.  \
+\
+To import baker's Calednly: Create an account on [Calendly](https://calendly.com/). Input personalized Calednly link. Customize form as needed.

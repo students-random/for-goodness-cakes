@@ -5,7 +5,7 @@ import Calendar from '../components/Calendar';
 
 const OrderForm = props => {
 	const [disabledDay, setDisabledDay] = useState([]);
-	const [newDisabledDay, setNewDisabledDay] = useState([]);
+	// const [newDisabledDay, setNewDisabledDay] = useState([]);
 	const [selectedDate, setSelectedDate] = useState({});
 	const [orders, setOrders] = useState([]);
 	const [thanks, setThanks] = useState(false);
@@ -37,31 +37,48 @@ const OrderForm = props => {
 		'Cakepops',
 		'Cakesicles'
 	]);
+	//======================= function to fetch/set disabledDates (start) ================
+	const fetchDisabledDates = async () => {
+		const response = await fetch('/api/disableddate');
+		const data = await response.json();
 
-	// const data = async () => {
-	// 	const response = await fetch('/api/disableddate');
-	// 	const data = await response.json();
-	//
-	// 	for (let i = 0; i < data.length; i++) {
-	// 		let updatedData = new Date(data[i].year, data[i].month, data[i].day);
-	// 		setDisabledDay(disabledDay => [...disabledDay, updatedData]);
-	// 	}
-	// };
+		for (let i = 0; i < data.length; i++) {
+			let updatedData = new Date(data[i].year, data[i].month, data[i].day);
+			setDisabledDay(disabledDay => [...disabledDay, updatedData]);
+		}
+	};
+	//======================= function to fetch/set disabledDates (end) ==================
 
 	//================ handleSubmit function updates Orders database (start) =======
 	const handleSubmit = async e => {
 		e.preventDefault();
-		newOrder.selectedDate = moment(selectedDate).format('MMMM DD, YYYY');
+		fetchDisabledDates();
 
-		console.log('neworder.selectedDate', newOrder.selectedDate);
+		newOrder.selectedDate = moment(selectedDate).format('MMMM DD, YYYY'); // sets orders
+
 		let year = moment(selectedDate).format('YYYY');
 		let month = moment(selectedDate).format('MM');
 		let day = moment(selectedDate).format('DD');
-		let updatedData = new Date(year, month, day);
+		let updatedData = new Date(year, month - 1, day);
 
 		sendEmail(e);
 		try {
-			const response = await fetch('/api/orders', {
+			const orderResponse = await fetch('/api/orders', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(newOrder)
+			});
+			const orderData = await orderResponse.json();
+
+			setSelectedDate(selectedDate); // sets orders
+			setOrders([...orders, orderData]); // sets orders
+			setThanks(!thanks); // thanks reply
+
+			// setNewDisabledDay(newDisabledDay => [...newDisabledDay, updatedData]);
+
+			const response = await fetch('/api/disableddate', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -70,13 +87,8 @@ const OrderForm = props => {
 			});
 			const data = await response.json();
 
-			setSelectedDate(selectedDate);
-			setOrders([...orders, data]);
-			setThanks(!thanks);
-
-			// setNewDisabledDay(updatedData);
-			setNewDisabledDay(selectedDate);
-			disableDateViaCalendar();
+			setDisabledDay(disabledDay => [...disabledDay, updatedData]);
+			// setNewDisabledDay([]);
 		} catch (error) {
 			console.error(error);
 		}
@@ -86,27 +98,6 @@ const OrderForm = props => {
 		setNewOrder({ ...newOrder, [e.target.id]: e.target.value });
 	};
 	//================ handleSubmit function updates Orders database (end) =========
-
-	//============== Function to disable date via calendar (start)==================
-	const disableDateViaCalendar = async () => {
-		try {
-			const response = await fetch('/api/disableddate', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(newDisabledDay)
-			});
-			const data = await response.json();
-			setDisabledDay(disabledDay => [...disabledDay, data]);
-			console.log('inside 99');
-			setNewDisabledDay([]);
-			return data;
-		} catch (error) {
-			console.error(error);
-		}
-	};
-	//================ Function to disable date via calendar (end)==================
 
 	//================== Function to send email to baker (start)====================
 	const templateParams = {
