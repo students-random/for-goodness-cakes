@@ -1,0 +1,157 @@
+div.MenuPage {
+  text-align: center;
+
+  h1 {
+    font-size: calc(50px + 1vw);
+    margin-bottom: -10px;
+    padding: 30px 0;
+  }
+
+  section.gallery-container {
+    max-width: 1300px;
+    margin: 2.5em 2em 1em 2em;
+    text-align: center;
+
+      button > img.cake {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+
+      button >h2 {
+        font-family: 'Playfair Display', serif;
+        margin: 0.5em 0 1em 0;
+      }
+    // }
+  }
+
+  /* Components */
+  div.Menu-Dropdown {
+
+    /* Flavors */
+    section.flavors {
+      border: 0.5em solid $pink;
+      margin: 0 2em 2em 2em;
+      padding: 2em;
+
+      h2 {
+        font-family: 'Allison', cursive;
+        font-size: calc(50px + 1vw);
+        color: $brown;
+      }
+
+      h5 {
+        font-family: 'Allison', cursive;
+        font-size: calc(24px + 1vw);
+        color: $brown;
+      }
+    }
+
+    /* Pricing */
+    section.text {
+      text-align: left;
+      border: 0.5em solid $pink;
+      margin: 0 2em 2em 2em;
+      padding: 2em;
+
+      h2 {
+        font-family: 'Allison', cursive;
+        font-size: calc(50px + 1vw);
+        color: $brown;
+      }
+
+      h5 {
+        color: $brown;
+        margin-top: 2em;
+      }
+
+      p.completely-custom {
+        margin-top: -1.2em;
+      }
+
+      div.pricing {
+        p.price-box {
+          margin-top: 2em;
+        }
+      }
+
+      p.end-text {
+        text-align: center;
+        color: $brown;
+        margin-top: 2em;
+      }
+    }
+  }
+    a {
+      button.btn-main {
+      margin-bottom: 2.5em;
+    }
+  }
+
+  /* ===== MEDIA QUERY ===== */
+  @media screen and (min-width: 1353px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section.gallery-container {
+      display: grid;
+      grid-template-columns: repeat(3, 400px);
+      grid-gap: 2em;
+
+        button > img.cake {
+          object-fit: cover;
+          width: 412px;
+          height: 583px;
+        }
+      }
+
+    /* Components @media */
+    div.Menu-Dropdown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      /* Flavors @media */
+      section.flavors {
+        width: 60vw;
+        height: auto;
+        // display: grid;
+        // border: 0.5em solid $pink;
+        // margin: 0 2em 2em 2em;
+        // padding: 2em;
+
+        h2 {
+          // font-family: 'Allison', cursive;
+          // font-size: calc(50px + 1vw);
+          // color: $brown;
+        }
+
+        h5 {
+          // font-family: 'Allison', cursive;
+          // font-size: calc(24px + 1vw);
+          // color: $brown;
+        }
+      }
+
+      /* Pricing - @media */
+      section.text {
+        width: 60vw;
+        height: auto;
+
+        h2 {
+          text-align: center;
+        }
+
+        h5 {
+          margin-top: 2.7em;
+          margin-bottom: 1em;
+        }
+
+        p.end-text {
+          padding: 0 8vw;
+        }
+      }
+    }
+  }
+}

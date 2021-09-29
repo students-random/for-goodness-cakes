@@ -4,22 +4,22 @@ const OccasionCakes = () => {
 	return (
 		<div className="Menu-Dropdown">
 			<section className="flavors">
-				<h1>Flavors</h1>
-				<p>Classic Ube </p>
-				<p> Chocolate Fudge</p>
+				<h2>Flavors</h2>
+				<p>Classic Ube 💗</p>
+				<p> Chocolate Fudge 💗</p>
 				<p> Chocolate with Salted Caramel</p>
 				<p> Cookies & Cream </p>
 				<p> Funfetti</p>
 				<p> Lemon Blueberry</p>
 				<p> Marble (chocloate & vanilla)</p>
 				<p> Matcha</p>
-				<p> Red Velvet</p>
-				<p> Vanilla</p>
-				<h1>Best Sellers</h1>
+				<p> Red Velvet 💗</p>
+				<p> Vanilla 💗</p>
+				<h5>💗 Best Sellers</h5>
 			</section>
 
 			<section className="text">
-				<h1>Pricing</h1>
+				<h2>Pricing</h2>
 				<p>
 					There is a minimum of 14 days notice for all custom work, based on
 					availability. Deposits must be paid 10 days in advance. We are small
@@ -27,7 +27,6 @@ const OccasionCakes = () => {
 					notice for all custom orders!
 				</p>
 				<p> We require a 50% deposit to hold and confirm custom cake orders.</p>
-				​
 				<p>
 					{' '}
 					Completely Custom Designs in our signature buttercream frosting.
@@ -50,11 +49,11 @@ const OccasionCakes = () => {
 					rate.{' '}
 				</p>
 				<div className="pricing">
-					<h5> ROUND CAKES</h5>
-					<p> 6” round cake (serves 12) $85</p>
-					<p>8” round cake (serves 24)$145</p>
-					<p>9” round cake (serves 32)$195</p>
-					<p>10” round cake (serves 42)$230</p>
+					<h5>ROUND CAKES</h5>
+					<p>6” round cake (serves 12) __________ $85</p>
+					<p>8” round cake (serves 24) __________ $145</p>
+					<p>9” round cake (serves 32) __________ $195</p>
+					<p>10” round cake (serves 42) __________ $230</p>
 				</div>
 				<p className="end-text">
 					All prices are a starting cost and includes a personalized topper in
