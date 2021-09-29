@@ -41,6 +41,7 @@ export default function Admin(props) {
 			setToken(window.localStorage.getItem('token'));
 			setLoggedInUser(window.localStorage.getItem('loggedInUser'));
 		}
+		window.scrollTo(0, 0);
 	}, []);
 
 	const logout = () => {

@@ -5,7 +5,6 @@ import HomeCarousel from '../components/Carousel';
 import Calendar from '../components/Calendar';
 
 export default function Home(props) {
-
 	const openInNewTab = () => {
 		const newWindow = window.open(
 			'https://m.facebook.com/forgoodnesscakesbysaira/reviews',
@@ -28,7 +27,6 @@ export default function Home(props) {
 			}
 		})();
 	}, []);
-
 
 	return (
 		<div className="HomePage">

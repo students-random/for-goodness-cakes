@@ -16,27 +16,35 @@ export default function Menu(props) {
 		setComponent(true);
 	};
 
+	const blur = component => {
+		if (!component) {
+			return {
+				filter: 'blur(3px)'
+			};
+		}
+	};
+
 	return (
 		<div className="MenuPage">
 			<h1>Menu</h1>
 			<section className="gallery-container">
 				<button
 					onClick={() => toggle(setViewOccasionCakes)}
-					style={{ border: 'none', backgroundColor: '#F6F5F0' }}
+					style={blur(viewOccasionCakes)}
 				>
 					<img className="cake" src="/img/Web-Occasion-Cakes.png" />
 					<h2>Occasion Cakes</h2>
 				</button>
 				<button
 					onClick={() => toggle(setViewCupcakes)}
-					style={{ border: 'none', backgroundColor: '#F6F5F0' }}
+					style={blur(viewCupcakes)}
 				>
 					<img className="cake" src="/img/Web-Cupcakes.png" />
 					<h2>Cupcakes</h2>
 				</button>
 				<button
 					onClick={() => toggle(setViewOtherSweets)}
-					style={{ border: 'none', backgroundColor: '#F6F5F0' }}
+					style={blur(viewOtherSweets)}
 				>
 					<img className="cake" src="/img/Web-Other Sweets.png" />
 					<h2>Other Sweets</h2>
