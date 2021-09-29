@@ -12,6 +12,11 @@ div.MenuPage {
     margin: 2.5em 2em 1em 2em;
     text-align: center;
 
+      button {
+        border: none;
+        background-color: #F6F5F0;
+      }
+
       button > img.cake {
         object-fit: cover;
         width: 100%;
@@ -22,7 +27,6 @@ div.MenuPage {
         font-family: 'Playfair Display', serif;
         margin: 0.5em 0 1em 0;
       }
-    // }
   }
 
   /* Components */
@@ -58,6 +62,7 @@ div.MenuPage {
         font-family: 'Allison', cursive;
         font-size: calc(50px + 1vw);
         color: $brown;
+        text-align: center;
       }
 
       h5 {
@@ -98,11 +103,28 @@ div.MenuPage {
       display: grid;
       grid-template-columns: repeat(3, 400px);
       grid-gap: 2em;
+      margin-bottom: 5em;
 
-        button > img.cake {
-          object-fit: cover;
-          width: 412px;
-          height: 583px;
+        button {
+          display: grid;
+          grid-template-rows: 411px 40px;
+
+          img.cake {
+            object-fit: cover;
+            width: auto;
+            height: 481px;
+          }
+
+          figcaption {
+            h2 {
+              font-family: 'Playfair Display', serif;
+              margin: 0.5em 0 1em 0;
+            }
+
+            h2:hover {
+              font-weight:900;
+            }
+          }
         }
       }
 
@@ -116,22 +138,45 @@ div.MenuPage {
       section.flavors {
         width: 60vw;
         height: auto;
-        // display: grid;
-        // border: 0.5em solid $pink;
-        // margin: 0 2em 2em 2em;
-        // padding: 2em;
+        padding: 5px 5px 1em 5px;
 
         h2 {
-          // font-family: 'Allison', cursive;
-          // font-size: calc(50px + 1vw);
-          // color: $brown;
+          grid-area: header;
+        }
+
+        article.flavor-saver {
+          grid-area: main;
+          display: flex;
+          justify-content: center;
+          text-align: left;
+
+          p.first-column {
+            font-size: calc(12px + 1vw);
+            padding-right: 2vw;
+            line-height: 1;
+          }
+
+          p.second-column {
+            flex-direction: column;
+            font-size: calc(12px + 1vw);
+            padding-left: 2vw;
+            line-height: 1;
+          }
         }
 
         h5 {
-          // font-family: 'Allison', cursive;
-          // font-size: calc(24px + 1vw);
-          // color: $brown;
+          grid-area: footer;
         }
+      }
+
+      section.flavors {
+        display: grid;
+        grid-template-columns: 1fr 50px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header header header"
+          "main main main"
+          "footer footer footer";
       }
 
       /* Pricing - @media */

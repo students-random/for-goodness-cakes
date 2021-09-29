@@ -5,14 +5,20 @@ const OtherSweets = () => {
 		<div className="Menu-Dropdown">
 			<section className="flavors">
 				<h2>Flavors</h2>
-				<p>Classic Ube</p>
-				<p>Chocolate Fudge 💗</p>
-				<p>Chocolate with Salted Caramel</p>
-				<p>Cookies & Cream</p>
-				<p>Funfetti 💗</p>
-				<p>Matcha</p>
-				<p>Red Velvet 💗</p>
-				<p>Vanilla 💗</p>
+				<article className="flavor-saver">
+					<p className="first-column">
+						<p>Classic Ube</p>
+						<p>Chocolate Fudge 💗</p>
+						<p>Chocolate with Salted Caramel</p>
+						<p>Cookies & Cream</p>
+						<p>Funfetti 💗</p>
+					</p>
+					<p className="second-column">
+						<p>Matcha</p>
+						<p>Red Velvet 💗</p>
+						<p>Vanilla 💗</p>
+					</p>
+				</article>
 				<h5>Best Sellers 💗</h5>
 			</section>
 
