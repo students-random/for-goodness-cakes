@@ -20,21 +20,11 @@
       align-items: center;
       margin: 1em 2em 3.5em 2em;
       border: 0.1em solid $black;
-
-      display: flex;
-      // width: 60%;
-      flex-direction: row;
-      flex-wrap: wrap;
-      // align-items: stretch;
-      border: 0.4em solid $pink;
-      // margin: 2em 5em;
-      width: 710px;
-      // height: 400px;
-      padding: 10px;
+      width: 780px;
+      padding-top: 30px;
 
       h2{
         font-size: 29px;
-          // font-size: calc(7px + 1vw);
       }
 
       .delivery-text {
@@ -94,13 +84,12 @@
 }
 
 @media (max-width: 900px) {
+
   div.delivery-calendar-div {
     position: relative;
     flex-direction: row;
     max-width: 320px;
-    margin-left: 0px;
-    padding-top: 50px;
-    margin-bottom: 50px;
+    height: 700px;
   }
 }
 /* ===== Day-Picker Styles =====*/
