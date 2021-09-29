@@ -12,6 +12,11 @@ div.MenuPage {
     margin: 2.5em 2em 1em 2em;
     text-align: center;
 
+      button {
+         border: none;
+         background-color: #F6F5F0;
+        }
+
       button > img.cake {
         object-fit: cover;
         width: 100%;
@@ -58,6 +63,7 @@ div.MenuPage {
         font-family: 'Allison', cursive;
         font-size: calc(50px + 1vw);
         color: $brown;
+        text-align: center;
       }
 
       h5 {
