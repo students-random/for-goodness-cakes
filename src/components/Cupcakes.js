@@ -4,22 +4,22 @@ const Cupcakes = () => {
 	return (
 		<div className="Menu-Dropdown">
 			<section className="flavors">
-				<h1>Flavors</h1>
-				<p>Classic Ube </p>
-				<p> Chocolate Fudge</p>
-				<p> Chocolate with Salted Caramel</p>
-				<p> Cookies & Cream </p>
-				<p> Funfetti</p>
-				<p> Lemon Blueberry</p>
-				<p> Marble (chocloate & vanilla)</p>
-				<p> Matcha</p>
-				<p> Red Velvet</p>
-				<p> Vanilla</p>
-				<h1>Best Sellers</h1>
+				<h2>Flavors</h2>
+				<p>Classic Ube 💗</p>
+				<p>Chocolate Fudge 💗</p>
+				<p>Chocolate with Salted Caramel</p>
+				<p>Cookies & Cream</p>
+				<p>Funfetti</p>
+				<p>Lemon Blueberry</p>
+				<p>Marble (chocloate & vanilla)</p>
+				<p>Matcha</p>
+				<p>Red Velvet 💗</p>
+				<p>Vanilla 💗</p>
+				<h5>Best Sellers 💗</h5>
 			</section>
 
 			<section className="text">
-				<h1>Pricing</h1>
+				<h2>Pricing</h2>
 				<p>
 					There is a minimum of 14 days notice for all custom work, based on
 					availability. Deposits must be paid 10 days in advance. We are small
@@ -27,7 +27,7 @@ const Cupcakes = () => {
 					notice for all custom orders!
 				</p>
 				<p>We require a 50% deposit to hold and confirm custom cake orders.</p>​
-				<p>
+				<p className="completely-custom">
 					Completely Custom Designs in our signature buttercream frosting.
 					Unlimited flavor combinations. Fillings can cost extra.
 				</p>
@@ -37,7 +37,7 @@ const Cupcakes = () => {
 					design a cake to meet your needs.
 				</p>
 				<div className="pricing">
-					<p> Box of 12 $36</p>
+					<p className="price-box">Box of 12 __________ $36</p>
 				</div>
 				<p className="end-text">
 					All prices are a starting cost and includes a personalized topper in

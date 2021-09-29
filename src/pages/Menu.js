@@ -18,6 +18,7 @@ export default function Menu(props) {
 
 	return (
 		<div className="MenuPage">
+			<h1>Menu</h1>
 			<section className="gallery-container">
 				<button
 					onClick={() => toggle(setViewOccasionCakes)}
