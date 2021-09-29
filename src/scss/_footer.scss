@@ -7,7 +7,7 @@ footer.footer {
   padding: 2.5em 3.5em;
   justify-content: center;
   align-items: center;
-  gap: 20em;
+  gap: 15em;
 
   section {
     h4 {
@@ -43,8 +43,8 @@ footer.footer {
     color: $wine;
   }
   // ===== Begin Media Query =====
-  @media (max-width: 1076px) {
-    gap: 2.5em;
+  @media (max-width: 1284px) {
+    gap: 1em;
     transition: 0.3s;
   }
   // ===== End Media Query =====

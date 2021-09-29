@@ -18,7 +18,6 @@ const Annoucements = props => {
 				const response = await fetch('/api/announcement');
 				const data = await response.json();
 				setAnnoucements(data);
-				console.log(data);
 			} catch (error) {
 				console.error(error);
 			}

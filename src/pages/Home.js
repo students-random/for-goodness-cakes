@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InlineWidget } from 'react-calendly';
-import Calendly from './Calendly';
+import Calendly from '../components/Calendly';
 import HomeCarousel from '../components/Carousel';
 import Calendar from '../components/Calendar';
 
 export default function Home(props) {
+
 	const openInNewTab = () => {
 		const newWindow = window.open(
 			'https://m.facebook.com/forgoodnesscakesbysaira/reviews',
@@ -13,6 +14,21 @@ export default function Home(props) {
 		);
 		if (newWindow) newWindow.opener = null;
 	};
+
+	const [annoucements, setAnnoucements] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			try {
+				const response = await fetch('/api/announcement');
+				const data = await response.json();
+				setAnnoucements(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, []);
+
 
 	return (
 		<div className="HomePage">
@@ -59,21 +75,17 @@ export default function Home(props) {
 				</div>
 
 				<section className="annoucements board-item">
-					<h6>Announcements</h6>
+					<h6 className="annoucement-title">Announcements</h6>
 					<section className="announcements-text">
-						<p>
-							I will be taking a baking break until October 1st. No orders will
-							be accepted between now and September 30th. However, you may place
-							your orders in advance for the last quarter of the year.
-						</p>
-						<p>
-							Thank you all from the bottom of my heart for your overflowing
-							support!
-						</p>
-						<p>
-							But for now, I would like to take the time to refresh and
-							recharge. Stay safe and God bless us all! 🙏🏼😇🧘🏻‍♀️
-						</p>
+						{annoucements.map(annoucement => {
+							return (
+								<>
+									<p> {annoucement.paragraph1}</p>
+									<p> {annoucement.paragraph2}</p>
+									<p> {annoucement.paragraph3}</p>
+								</>
+							);
+						})}
 					</section>
 				</section>
 			</section>
