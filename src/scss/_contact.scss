@@ -1,9 +1,7 @@
 .ContactPage {
-  background-color: $off-white;
   border: solid  $off-white;
   padding: 0 20% 0 20%;
-  min-height:80vh;  //I have this here because I want the Thank You page to be full length.
-                //unless you know of another way?
+  min-height:80vh;  
 
  h1 {
    font-size: calc(50px + 1vw);

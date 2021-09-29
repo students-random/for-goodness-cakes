@@ -51,10 +51,12 @@ const LogIn = ({
 				body: JSON.stringify(user)
 			});
 			const data = await response.json();
-			// setToken(data.token);                 //disabled in order to force user to login after register
+			//============== disabled to force user to login after register===========
+			// setToken(data.token);
 			// setLoggedInUser(data.user.username);
 			// window.localStorage.setItem('token', data.token);
 			// window.localStorage.setItem('loggedInUser', data.user.username);
+			//========================================================================
 			setToggle(!toggle);
 			displayForm();
 		} catch (error) {
@@ -105,6 +107,7 @@ const LogIn = ({
 							</div>
 							<div className="log-in-btns">
 								<input type="submit" value="Log In" />
+								{/* ======================= disabled so only 'demo' password works ===============
 								<input
 									type="button"
 									onClick={() => {
@@ -112,7 +115,8 @@ const LogIn = ({
 										displayForm();
 									}}
 									value="Create New Account"
-								/>
+								/>   ======================= disabled so only 'demo' password works ===============
+								*/}
 							</div>
 						</form>
 					</div>

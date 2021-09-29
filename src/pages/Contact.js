@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs, { init } from 'emailjs-com';
 
 export default function Contact(props) {
 	const [submissions, setSubmissions] = useState({});
@@ -11,7 +12,7 @@ export default function Contact(props) {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-
+		sendEmail(e);
 		try {
 			const response = await fetch('/api/contactsubmissions', {
 				method: 'POST',
@@ -36,17 +37,43 @@ export default function Contact(props) {
 		setNewSubmission({ ...newSubmission, [e.target.id]: e.target.value });
 	};
 
+	const templateParams = {
+		user_name: newSubmission.name,
+		user_email: newSubmission.email,
+		message: newSubmission.reason
+	};
+	const sendEmail = async e => {
+		e.preventDefault();
+		emailjs
+			.send(
+				'service_uy4xefh',
+				'template_04kre0g',
+				templateParams,
+				'user_HiF2ZhDSYEd3b5ieU6zN6'
+			)
+			.then(
+				function(response) {
+					console.log('SUCCESS!', response.status, response.text);
+				},
+				function(err) {
+					console.log('FAILED...', err);
+				}
+			);
+	};
+
 	return (
 		<div className="ContactPage">
 			{!thanks && (
 				<>
 					<h1>Contact Me</h1>
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={handleSubmit} id="contact-form">
 						<div className="row name-email-div">
+							<input type="hidden" name="contact_number" />
 							<div className="form-group col name-label">
 								<label>Name</label>
 								<input
 									type="text"
+									name="user_name"
 									className="form-control"
 									id="name"
 									placeholder="Full Name"
@@ -58,6 +85,7 @@ export default function Contact(props) {
 								<label>Email</label>
 								<input
 									type="email"
+									name="user_email"
 									className="form-control"
 									id="email"
 									placeholder="name@example.com"
@@ -71,6 +99,7 @@ export default function Contact(props) {
 							<textarea
 								className="form-control"
 								type="text"
+								name="message"
 								rows="8"
 								id="reason"
 								placeholder="Type your comment here..."

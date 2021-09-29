@@ -104,7 +104,11 @@ const UpdateOrder = ({
 					</tbody>
 				</table>
 			</div>
-			<form onSubmit={handleUpdate} data-order={order._id}>
+			<form
+				className="update-form"
+				onSubmit={handleUpdate}
+				data-order={order._id}
+			>
 				<tbody>
 					<tr>
 						<th scope="row">{index + 1}</th>

@@ -1,48 +1,111 @@
 .OrderForm {
   margin: 0 20% 0 20%;
+  font-family: 'Playfair Display', serif;
+  min-height:75vh;
 
   h1 {
     font-size: calc(50px + 1vw);
+    padding-top: 30px;
     margin-bottom: 30px;
   }
 
-  .form {
-    // border: solid purple;
+  div.form {
     display: flex;
     flex-direction: column;
 
-    .delivery-calendar-div {
-      justify-content: center;
+    div.delivery-calendar-div {
       display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 1em 2em 3.5em 2em;
+      border: 0.1em solid $black;
+
+      display: flex;
+      // width: 60%;
       flex-direction: row;
       flex-wrap: wrap;
-      border: 1px solid #a0a096;
+      // align-items: stretch;
+      border: 0.4em solid $pink;
+      // margin: 2em 5em;
+      width: 710px;
+      // height: 400px;
+      padding: 10px;
+
+      h2{
+        font-size: 29px;
+          // font-size: calc(7px + 1vw);
+      }
 
       .delivery-text {
-        // border: solid blue;
-        width: 350px;
+        width: 280px;
         max-width: 100%;
+        // border: solid red;
+        margin-top: -50px;
+      }
+      .calendar {
+        // border: solid blue;
       }
     }
+
     .question {
-      // border: solid pink;
+      // ===== Make a Selection =====
+      select#orderType {
+        margin: 0.3em 0 2.5em 2em;
+      }
 
       .label {
-        // border: solid black;
         width: 100%;
       }
+
     .actual-form{
-      // border: solid orange;
-      width:  100%;
+      width: 100%;
       }
+
       textarea{
         box-sizing: border-box;
         width: 100%;
+        margin: 1.75em 2em;
       }
+
+      input {
+        margin: 0.5em 0 1em 2em;
+      }
+    }
+
+    div.form-check {
+      margin: 0 0 1em 2em;
+
+      input#flavor.form-check-input {
+        transform: scale(1.5);
+      }
+
+      label.form-check-label {
+        margin-left: 0.2em;
+        margin-bottom: 0.5em;
+
+      }
+    }
+
+    input.btn-main {
+      margin-bottom: 2.5em;
     }
   }
 }
-// ===== Day-Picker Styles==================================================
+
+@media (max-width: 900px) {
+  div.delivery-calendar-div {
+    position: relative;
+    flex-direction: row;
+    max-width: 320px;
+    margin-left: 0px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+/* ===== Day-Picker Styles =====*/
+/* ↓↓↓↓↓↘ ===== WARNING ===== ↙↓↓↓↓↓ */
+/* ===== WARNING - don't touch anyting below here. It came with the calendar. ===== */
 
 .DayPicker {
   width: 350px;
@@ -50,7 +113,6 @@
   display: inline-block;
   font-size: 1rem;
   // background: white;
-
 }
 
 .DayPicker-wrapper {

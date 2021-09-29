@@ -21,10 +21,12 @@ const Footer = props => {
 					<img className="facebook-img" src="/img/facebook-icon.png" />
 				</a>
 			</section>
-			<img className="footer-img" src="/img/for-goodness-cakes-logo-dark.png" />
+			{/* Start - Link to Admin.js - between logo and social ☢ */}
 			<Link to={'/admin'}>
 				<a className="admin-link">Admin</a>
 			</Link>
+			{/* End - Link to Admin.js ☢ */}
+			<img className="footer-img" src="/img/for-goodness-cakes-logo-dark.png" />
 		</footer>
 	);
 };
