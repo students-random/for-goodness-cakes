@@ -12,6 +12,20 @@
     height: auto;
   }
 
+  .user1 {
+    border-radius: 70px;
+    width: 70px;
+  }
+
+  .user2 {
+    border-radius: 70px;
+    width: 70px;
+  }
+
+  .review {
+    cursor: pointer;
+  }
+
   div.carousel {
     width: 100%;
   }
@@ -47,6 +61,10 @@
       p {
         color: $wine;
         padding-left: 11px;
+      }
+
+      .user1 {
+        border-radius: 30px;
       }
     }
     /* ↓↓↓↓↓↘ Start - Media Query ↙↓↓↓↓↓ */
