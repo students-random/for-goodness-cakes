@@ -33,21 +33,27 @@ export default function Menu(props) {
 					style={blur(viewOccasionCakes)}
 				>
 					<img className="cake" src="/img/Web-Occasion-Cakes.png" />
-					<h2>Occasion Cakes</h2>
+					<figcaption>
+						<h2>Occasion Cakes</h2>
+					</figcaption>
 				</button>
 				<button
 					onClick={() => toggle(setViewCupcakes)}
 					style={blur(viewCupcakes)}
 				>
 					<img className="cake" src="/img/Web-Cupcakes.png" />
-					<h2>Cupcakes</h2>
+					<figcaption>
+						<h2>Cupcakes</h2>
+					</figcaption>
 				</button>
 				<button
 					onClick={() => toggle(setViewOtherSweets)}
 					style={blur(viewOtherSweets)}
 				>
 					<img className="cake" src="/img/Web-Other Sweets.png" />
-					<h2>Other Sweets</h2>
+					<figcaption>
+						<h2>Other Sweets</h2>
+					</figcaption>
 				</button>
 			</section>
 			{viewOccasionCakes && <OccasionCakes />}
