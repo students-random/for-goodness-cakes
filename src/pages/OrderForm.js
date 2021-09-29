@@ -5,7 +5,6 @@ import Calendar from '../components/Calendar';
 
 const OrderForm = props => {
 	const [disabledDay, setDisabledDay] = useState([]);
-	// const [newDisabledDay, setNewDisabledDay] = useState([]);
 	const [selectedDate, setSelectedDate] = useState({});
 	const [orders, setOrders] = useState([]);
 	const [thanks, setThanks] = useState(false);
@@ -37,7 +36,7 @@ const OrderForm = props => {
 		'Cakepops',
 		'Cakesicles'
 	]);
-	//======================= function to fetch/set disabledDates (start) ================
+	//===================== function to fetch/set disabledDates (start) ===========
 	const fetchDisabledDates = async () => {
 		const response = await fetch('/api/disableddate');
 		const data = await response.json();
@@ -47,21 +46,27 @@ const OrderForm = props => {
 			setDisabledDay(disabledDay => [...disabledDay, updatedData]);
 		}
 	};
-	//======================= function to fetch/set disabledDates (end) ==================
+	//=================== function to fetch/set disabledDates (end) ===============
 
-	//================ handleSubmit function updates Orders database (start) =======
+	//================ handleSubmit function updates Orders database (start) ======
 	const handleSubmit = async e => {
 		e.preventDefault();
 		fetchDisabledDates();
 
-		newOrder.selectedDate = moment(selectedDate).format('MMMM DD, YYYY'); // sets orders
+		newOrder.selectedDate = moment(selectedDate).format('MMMM DD, YYYY');
 
 		let year = moment(selectedDate).format('YYYY');
 		let month = moment(selectedDate).format('MM');
 		let day = moment(selectedDate).format('DD');
 		let updatedData = new Date(year, month - 1, day);
+		const dayData = {
+			year: year,
+			month: month,
+			day: day
+		};
 
 		sendEmail(e);
+		//================ fetch to create new order ==========
 		try {
 			const orderResponse = await fetch('/api/orders', {
 				method: 'POST',
@@ -72,23 +77,20 @@ const OrderForm = props => {
 			});
 			const orderData = await orderResponse.json();
 
-			setSelectedDate(selectedDate); // sets orders
-			setOrders([...orders, orderData]); // sets orders
-			setThanks(!thanks); // thanks reply
+			setSelectedDate(selectedDate);
+			setOrders([...orders, orderData]);
+			setThanks(!thanks);
 
-			// setNewDisabledDay(newDisabledDay => [...newDisabledDay, updatedData]);
-
+			//============== fetch to create new diabled date =======
 			const response = await fetch('/api/disableddate', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(newOrder)
+				body: JSON.stringify(dayData)
 			});
 			const data = await response.json();
-
 			setDisabledDay(disabledDay => [...disabledDay, updatedData]);
-			// setNewDisabledDay([]);
 		} catch (error) {
 			console.error(error);
 		}
@@ -97,9 +99,9 @@ const OrderForm = props => {
 	const handleChange = e => {
 		setNewOrder({ ...newOrder, [e.target.id]: e.target.value });
 	};
-	//================ handleSubmit function updates Orders database (end) =========
+	//================ handleSubmit function updates Orders database (end) ========
 
-	//================== Function to send email to baker (start)====================
+	//================== Function to send email to baker (start)===================
 	const templateParams = {
 		user_name: newOrder.name,
 		user_email: newOrder.email,
@@ -128,7 +130,7 @@ const OrderForm = props => {
 				}
 			);
 	};
-	//==================== Function to send email to baker (end)====================
+	//==================== Function to send email to baker (end)===================
 
 	return (
 		<div className="OrderForm">
