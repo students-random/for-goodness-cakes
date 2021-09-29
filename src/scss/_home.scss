@@ -13,6 +13,20 @@
     height: auto;
   }
 
+  .user1 {
+    border-radius: 70px;
+    width: 70px;
+  }
+
+  .user2 {
+    border-radius: 70px;
+    width: 70px;
+  }
+
+  .review {
+    cursor: pointer;
+  }
+
   section.how-to-order {
     display: flex;
     width: 90%;
@@ -42,6 +56,10 @@
       p {
         color: $wine;
         padding-left: 11px;
+      }
+
+      .user1 {
+        border-radius: 30px;
       }
     }
     /* ↓↓↓↓↓↘ Start - Media Query ↙↓↓↓↓↓ */
@@ -140,7 +158,7 @@
     section.review-left {
       margin-right: 0.5em;
     }
-    
+
     section.review-right {
       margin-left: 0.5em;
     }
