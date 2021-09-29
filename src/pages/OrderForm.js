@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs, { init } from 'emailjs-com';
 import moment from 'moment';
 import Calendar from '../components/Calendar';
@@ -36,6 +36,11 @@ const OrderForm = props => {
 		'Cakepops',
 		'Cakesicles'
 	]);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	//===================== function to fetch/set disabledDates (start) ===========
 	const fetchDisabledDates = async () => {
 		const response = await fetch('/api/disableddate');
@@ -80,6 +85,7 @@ const OrderForm = props => {
 			setSelectedDate(selectedDate);
 			setOrders([...orders, orderData]);
 			setThanks(!thanks);
+			window.scrollTo(0, 0);
 
 			//============== fetch to create new diabled date =======
 			const response = await fetch('/api/disableddate', {
